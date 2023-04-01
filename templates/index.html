@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance</title>
+</head>
+
+<body>
+    <div class="heading">Ambulance Detector<br><br>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <label for="video" class="heading upload">Upload an audio:</label>
+            <input type="file" id="audio" name="audio" class="choose_file"><br>
+
+            <!-- <label for="video" class="heading upload">Upload a video:</label>
+            <input type="file" id="video" name="video" class="choose_file"><br> -->
+            <button type="submit" class="submit_button" onsubmit="predictAudio(event)">Submit</button>
+        </form>
+    </div>
+    <div class="loader" style="display: none;"> </div>
+    <div id="prediction">
+        {% if preds is not none %}
+        {% if preds == 1 %}
+        <p>Ambulance Detected!. </p>
+        {% endif %}
+
+        {% if preds == 0 %}
+        <p>Not an Ambulance!</p>
+        {% endif %}
+
+        {% if spectrogram %}
+        <div class="spectrogram">
+            <h2>Spectrogram</h2>
+            <img src="../uploads/{{spectrogram}}.png" alt="Spectrogram">
+        </div>
+        {% endif %}
+
+        {% endif %}
+    </div>
+</body>
+<script src="../static/js/main.js"></script>
+
+</html>
