@@ -72,8 +72,12 @@ def model_predict(file_path, model):
 
 from flask import send_file
 
+@app.route("/home")
+def home():
+    return redirect(url_for("index"))
 
-@app.route("/", methods=['GET', 'POST'])
+
+@app.route("/", methods=['GET'])
 def index():
     return render_template('index.html')
 

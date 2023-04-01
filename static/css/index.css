@@ -11,9 +11,10 @@ input[type="submit"] {
     font-family: 'Poppins', sans-serif;
 }
 
+
 .heading {
     text-align: center;
-    font-size: 80px;
+    font-size: 40px;
 }
 
 .upload {
@@ -34,4 +35,119 @@ input[type="submit"] {
     padding: 10px 10px 10px 10px;
     cursor: pointer;
     border-radius: 10px;
+}
+
+.home-btn {
+    margin-left: auto;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0069d9;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.result {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.spectrogram {
+    margin-top: 30px;
+}
+
+.spectrogram-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }

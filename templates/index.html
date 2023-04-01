@@ -10,37 +10,44 @@
 </head>
 
 <body>
-    <div class="heading">Ambulance Detector<br><br>
-        <form action="/predict" method="POST" enctype="multipart/form-data">
-            <label for="video" class="heading upload">Upload an audio:</label>
-            <input type="file" id="audio" name="audio" class="choose_file"><br>
+    <div class="container">
+        <h1 class="title">Ambulance Detector</h1>
 
-            <!-- <label for="video" class="heading upload">Upload a video:</label>
-            <input type="file" id="video" name="video" class="choose_file"><br> -->
-            <button type="submit" class="submit_button" onsubmit="predictAudio(event)">Submit</button>
+        <form class="form" action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="form-label" for="audio">Upload an audio:</label>
+                <input class="form-control" type="file" id="audio" name="audio" accept="audio/*" required>
+            </div>
+            <a href="/" class="btn-home"><i class="fas fa-home"></i></a>
+            <div style="display: flex; display: flex; width: 100%; justify-content: space-around;">
+                <a class="home-btn" href="/">Home</a>
+
+                <button class="btn" type="submit">Submit</button>
+            </div>
         </form>
-    </div>
-    <div class="loader" style="display: none;"> </div>
-    <div id="prediction">
+        <div class="loader" style="display: none;"> </div>
         {% if preds is not none %}
-        {% if preds == 1 %}
-        <p>Ambulance Detected!. </p>
-        {% endif %}
+        <div id="prediction">
+            <div class="result {% if preds == 1 %}success{% endif %}{% if preds == 0 %}error{% endif %}">
+                {% if preds == 1 %}
+                Ambulance Detected!
+                {% endif %}
 
-        {% if preds == 0 %}
-        <p>Not an Ambulance!</p>
-        {% endif %}
-
-        {% if spectrogram %}
-        <div class="spectrogram">
-            <h2>Spectrogram</h2>
-            <img src="../uploads/{{spectrogram}}.png" alt="Spectrogram">
+                {% if preds == 0 %}
+                <p>Not an Ambulance!</p>
+                {% endif %}
+            </div>
+            {% if spectrogram %}
+            <div class=" spectrogram">
+                <h2 class="spectrogram-title">Spectrogram</h2>
+                <img src="../uploads/{{spectrogram}}.png" alt="Spectrogram">
+            </div>
+            {% endif %}
         </div>
         {% endif %}
-
-        {% endif %}
     </div>
+
+    <script src="../static/js/main.js"></script>
 </body>
-<script src="../static/js/main.js"></script>
 
 </html>
